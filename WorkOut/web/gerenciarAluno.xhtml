@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body> 
+        <h:form>
+            <h:commandButton action="#{loginController.logout}" value="Logout"/>
+        </h:form>
+        <h:form> 
+
+            <h:dataTable value="#{alunoController.alunos}" var="c"> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Nome" /></f:facet>
+                    <h:outputText value="#{c.nome}" /> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Email" /></f:facet> 
+                    <h:outputText value="#{c.email}" /> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="ID personal" /></f:facet> 
+                    <h:outputText value="#{c.id}" /> 
+                </h:column> 
+
+                <h:column>
+                    <f:facet name="header"/>                    
+
+                </h:column>
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Ações" /></f:facet> 
+                    <h:commandButton action="alunoAlterar" actionListener="#{alunoController.selecionar}" value="Alterar" /> 
+                    <h:commandButton action="alunoDeletar" actionListener="#{alunoController.selecionar}" value="Remover" /> 
+                    <h:commandButton action="gerenciarPesos" actionListener="#{alunoController.selecionar}" value="Historico de Peso" />
+                    <h:commandButton action="gerenciarTreino" actionListener="#{alunoController.selecionar}" value="Treino" /> 
+                </h:column>     
+            </h:dataTable> 
+
+            <h:commandButton action="alunoInserir"  value="Novo Aluno" /> 
+            <h:commandButton action="javacalendar.jsp"  value="Agenda" />
+        </h:form> 
+    </h:body>
+
+</html>

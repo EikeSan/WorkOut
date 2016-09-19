@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Gerenciador de Personal</title>
+    </h:head>
+    <h:body>
+        <h1>Gerenciador de Personal</h1>
+        <h:form>
+            Nome <h:inputText value="#{personalController.personal.nome}"/><br/>
+            email <h:inputText value="#{personalController.personal.email}"/><br/>
+            Senha <h:inputText value="#{personalController.personal.senha}"/><br/>
+            <h:commandButton action="#{personalController.adicionarPersonal}" value="Inserir Novo Personal"/>
+            <h:commandButton action="#{personalController.alterarPersonal}" value="Alterar Personal"/>
+            <br/>
+            <h:commandButton action="personal" value="Voltar"/>
+        </h:form>
+    </h:body>
+</html>
+

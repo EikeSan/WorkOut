@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>WorkOut</title>
+    </h:head>
+    <h:body>
+        <h1>WorkOut</h1>
+        <h:dataTable var="personal" value="#{personalController.listarPersonal}">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Nome"/>
+                </f:facet>
+                <h:outputText value="#{personal.nome}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Email"/>
+                </f:facet>
+                <h:outputText value="#{personal.email}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header"/>
+                <h:outputText value="Alterar"/>
+                <h:form>
+                    <h:commandButton action="#{personalController.prepararAlterarPersonal}" value="Alterar"/>
+                </h:form>
+            </h:column>
+            <h:column>
+                <f:facet name="header"/>
+                <h:outputText value="Excluir"/>
+                <h:form>
+                    <h:commandButton action="#{personalController.excluirPersonal}" value="Excluir"/>
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <br/>
+        <h:form>
+            <h:commandLink value="Novo Personal" action="#{personalController.prepararAdicionarPersonal}"/>
+        </h:form>
+        <h:form>
+        </h:form>
+        <br />
+    </h:body>
+</html>
+

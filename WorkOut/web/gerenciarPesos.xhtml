@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+        <h:body> 
+        <h:form> 
+            <h:commandButton action="pesoInserir"  value="Novo" /> 
+            <h:commandButton action="pesoChart"  actionListener="#{piePesoChartMBean.geraLista(alunoController.aluno.getEmail())}" value="Mostrar Relatorio" />
+            <h:dataTable value="#{pesoController.getTreinosAluno(alunoController.aluno.getEmail())}" var="c"> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="peso" /></f:facet>
+                    <h:outputText value="#{c.peso}" /> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Data" /></f:facet> 
+                    <h:outputText value="#{c.data}" /> 
+                </h:column> 
+                    <h:column> 
+                    <f:facet name="header"><h:outputText value="Email" /></f:facet> 
+                    <h:outputText value="#{c.email}" /> 
+                </h:column> 
+                    <h:column> 
+                    <f:facet name="header"><h:outputText value="id_peso" /></f:facet> 
+                    <h:outputText value="#{c.id_peso}" /> 
+                </h:column> 
+                <h:column> 
+                    <f:facet name="header"><h:outputText value="Ações" /></f:facet> 
+                    <h:commandButton action="pesoAlterar" actionListener="#{pesoController.selecionar}" value="Alterar" /> 
+                    <h:commandButton action="pesoDeletar" actionListener="#{pesoController.selecionar}" value="Remover" />
+                </h:column> 
+            </h:dataTable> 
+            <h:commandButton action="gerenciarAluno" immediate="true" value="Cancelar" />
+        </h:form> 
+    </h:body>
+    
+</html>

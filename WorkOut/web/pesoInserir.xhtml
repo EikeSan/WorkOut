@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>  
+    <h:body> 
+
+        <h:form> 
+            <h:panelGrid columns="2"> 
+                <h:outputText value="Peso" /> 
+                <h:inputText value="#{pesoController.peso.peso}" /> 
+                <h:outputText value="Email" /> 
+                <h:inputText value="#{pesoController.peso.email}" /> 
+                <h:commandButton action="#{pesoController.inserir}" value="Inserir" /> 
+
+            </h:panelGrid> 
+            <h:commandButton action="gerenciarAluno" immediate="true" value="Cancelar" />        </h:form> 
+
+    </h:body>
+
+</html>
